@@ -174,7 +174,7 @@ async def dropthatshit(msg):
                                             return
                         if foundMsg == False:
                             await sellmsgtext(msg)
-                            soldStockListFunction(msg)
+                            await soldStockListFunction(msg)
                             return
                     except ValueError:
                         await trades_channel.send(f'format must be !sell TICKER PRICE example !sell AAPL 1.50 - EC681')
