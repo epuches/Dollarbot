@@ -4,6 +4,13 @@ from discord.ext import commands
 from discord.utils import get
 from collections import defaultdict
 
+api_key = "YOUR_KEY"
+api_secret = "YOUR_SECRET"
+access_token = "NzIzNDk2MTc1OTY5NTAxMjU2.XvNP4g.ef9lrx9rsM_FI3Mlr_YYR-eT6Ns"
+token_secret = "YOUR_TOKEN_SECRET"
+#trades_channel_id = 723538942095392778
+trades_channel_id = 724708986032488459
+bot_id = 723496175969501256
 
 
 client = discord.Client()
@@ -88,6 +95,7 @@ async def creator(msg):
         trades_channel = client.get_channel(config.trades_channel_id)
         await  trades_channel.send(f'This BOT was written by epuches@gmail.com.  For licensing or request please contact me.  Thanks!')
     
+
 
 @client.command(name="buy", description="buy2")
 async def buy(msg):
@@ -225,6 +233,8 @@ async def boughtStockListFunction(msg):
     else:
         UserStockPortfolio[authorid] = {ticker:price}
 
+
+
 @client.event
 async def on_ready():
     """
@@ -233,5 +243,8 @@ async def on_ready():
     """
     print('Never fear the DollarBot is here')
 
+
+
 client.run(config.access_token)    # Bot token
 
+input()
